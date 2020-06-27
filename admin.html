@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/admin.css">
+    <title>News</title>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <div class="side-bar">
+            <img class="logo-image" src="images/logo.png">
+            <h1 class="app-name"> ADMIN </h1>
+            <nav>
+                <ul>
+                    <li><a class="update-news" href="home.html">Home</a></li>
+                    <li><a class="add-news" href="login.html">Add News</a></li>
+                    <li><a class="update-news" href="update.html">Delete News</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+        <div class="main-div">
+            <div class="verified-news">
+                <div class="admin-page">
+                    <div class="form">
+                      <form id="add-news">
+                        <input id="newstitle" type="text" placeholder="News Title"/>
+                        <textarea id="newsdescription" type="text" placeholder="News Description"></textarea>
+                        <input id="submit-as-verified" type="submit" value="Submit as Verified">
+                        <input id="submit-as-fake" type="submit" value="Submit as Fake">
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="js/add-news.js"></script>
+
+</body>
+</html>

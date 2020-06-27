@@ -1,0 +1,139 @@
+.admin-page {
+    width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.form {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 1000px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form input[type="submit"] {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #812121;
+    width: 30%;
+    border: 0;
+    padding: 13px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form input[id="submit-as-verified"] {
+    margin-right: 20px;
+}
+
+.form input[id="submit-as-fake"] {
+    margin-left: 20px;
+}
+
+textarea{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 150px;
+}
+
+  
+.main-title {
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+  
+body {
+    font-family: "Roboto", sans-serif;    
+}
+
+
+
+html{
+    font-family: "Roboto", sans-serif;
+}
+
+.container{
+    margin: auto;
+    padding: 10px;
+}
+
+.container .app-name {
+    width: max-content;
+    margin: auto ;
+    color: #812121;
+}
+
+body img {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.side-bar {
+    width: 15%;
+    float: left;
+    box-sizing: border-box;
+    height: 1000px;
+}
+
+.side-bar li {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.side-bar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.side-bar nav {
+    margin: auto;
+    width: max-content;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.side-bar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    
+}
+
+.side-bar .add-news {
+    color: black;
+}
+
+.side-bar .update-news {
+    color: #ababab;
+}
+
+.main-div {
+    width: 85%;
+    float: left;
+}
