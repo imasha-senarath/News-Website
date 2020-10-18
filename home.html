@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
-    <title>News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Home</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
 </head>
+</head>
+
 <body>
+
 
     <div class="container">
 
-        <div class="side-bar">
-            <img class="logo-image" src="images/logo.png">
-            <h1 class="app-name"> NEWS </h1>
-            <nav>
-                <ul>
-                    <li><a class="home" href="home.html">Home</a></li>
-                    <li><a href="login.html">Admin</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    
+        <div class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="images/logo.png">
+                    <h1> News </h1>
+                </div>
 
-        <div class="main-div">
+                <div class="menu">
+                    <ul>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container">
             <div class="verified-news">
                 <h1 class="main-title"> VERIFIED NEWS </h1>
                 <div id="verified-news-list"></div>
             </div>
-        
+
             <div class="fake-news">
                 <h1 class="main-title"> FAKE NEWS </h1>
                 <div id="fake-news-list"></div>
@@ -37,7 +47,13 @@
             <script src="js/load-news.js"></script>
         </div>
 
+
+    </div>
+    <div class="mobile-container">
+        <img src="images/logo.png" alt="">
+        <h1>Use Our Mobile Application</h1>
     </div>
 
 </body>
+
 </html>

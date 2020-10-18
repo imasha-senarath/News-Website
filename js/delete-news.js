@@ -15,73 +15,71 @@ var URL2 = 'http://192.168.8.103:3002/getnews';
 
 URLChecking();
 
-function URLChecking() 
-{
-    fetch(URL1,{method:'GET'})
-    .then(function(resp) {
-        //URL working
-        ResponseChecking(URL1);
-    })
-    .catch(function(err) {
-        //URL not working
-        ResponseChecking(URL2);
-    });
+function URLChecking() {
+    fetch(URL1, { method: 'GET' })
+        .then(function (resp) {
+            //URL working
+            ResponseChecking(URL1);
+        })
+        .catch(function (err) {
+            //URL not working
+            ResponseChecking(URL2);
+        });
 }
 
 
-function ResponseChecking(URL) 
-{
+function ResponseChecking(URL) {
     var request = new XMLHttpRequest()
     request.open('GET', URL, true)
-    request.onload = function() 
-    {
+    request.onload = function () {
         var data = JSON.parse(this.response)
 
-        if(request.status >=200 && request.status < 400) 
-        {
+        if (request.status >= 200 && request.status < 400) {
             //Responsiveed
-            GetVerifiedNews (URL);
+            GetVerifiedNews(URL);
             getFakeNews(URL);
-        } 
-        else 
-        {
+        }
+        else {
             //Not responsive
-            GetVerifiedNews (URL2);
+            GetVerifiedNews(URL2);
             getFakeNews(URL2);
         }
     }
 
-request.send()
+    request.send()
 
 }
 
 
-function GetVerifiedNews (URL) 
-{
+function GetVerifiedNews(URL) {
     var request = new XMLHttpRequest()
     request.open('GET', URL, true)
-    request.onload = function() 
-    {
+    request.onload = function () {
         var data = JSON.parse(this.response)
 
-        if(request.status >=200 && request.status < 400) 
-        {
+        if (request.status >= 200 && request.status < 400) {
             data.forEach(news => {
 
                 const type = news.newstype;
-                if(type == 'verified')
-                {
+                if (type == 'verified') {
                     const card = document.createElement('div')
                     card.setAttribute('class', 'card')
 
+                    const settings = document.createElement('div')
+                    settings.setAttribute('class', 'settings')
+
                     const deleteBtn = document.createElement('img')
                     deleteBtn.setAttribute('class', 'delete-btn')
-                    deleteBtn.src = 'images/delete.png'
-    
+                    deleteBtn.src = '../images/delete.png'
+
+                    const editBtn = document.createElement('img')
+                    editBtn.setAttribute('class', 'edit-btn')
+                    editBtn.src = '../images/edit.png'
+
                     const title = document.createElement('h1')
                     title.setAttribute('class', 'title')
                     title.textContent = news.title
-        
+
                     const date = document.createElement('h1')
                     date.setAttribute('class', 'date')
                     date.textContent = news.date
@@ -91,102 +89,107 @@ function GetVerifiedNews (URL)
                     description.textContent = news.description
 
                     deleteBtn.addEventListener('click',
-                    function() {
-    
-                        fetch('http://192.168.8.103:3001/deletenews/' + news._id, {
-                            method: 'DELETE',
-                        })
-                        .then(res => res.json())
-                        .then((data) => {
-                            const result = JSON.stringify(data.message);
-                            alert(result);
-                        })
-                    },
-                    false);
-        
-        
+                        function () {
+
+                            fetch('http://192.168.8.103:3001/deletenews/' + news._id, {
+                                method: 'DELETE',
+                            })
+                                .then(res => res.json())
+                                .then((data) => {
+                                    const result = JSON.stringify(data.message);
+                                    alert(result);
+                                })
+                        },
+                        false);
+
+
                     verifiedNewsContainer.appendChild(card)
-                    card.appendChild(deleteBtn)
                     card.appendChild(title)
                     card.appendChild(date)
                     card.appendChild(description)
+                    card.appendChild(settings)
+                    settings.appendChild(deleteBtn)
+                    settings.appendChild(editBtn)
                 }
             })
-        } 
-        else 
-        {
+        }
+        else {
             console.log('error')
         }
     }
 
-request.send()
+    request.send()
 
 }
 
 
-function getFakeNews(URL) 
-{
+function getFakeNews(URL) {
     var request = new XMLHttpRequest()
     request.open('GET', URL, true)
-    request.onload = function() 
-    {
+    request.onload = function () {
         var data = JSON.parse(this.response)
 
-        if(request.status >=200 && request.status < 400) 
-        {
+        if (request.status >= 200 && request.status < 400) {
             data.forEach(news => {
 
-            const type = news.newstype;
-            if(type == 'fake')
-            {
-                const card2 = document.createElement('div')
-                card2.setAttribute('class', 'card')
+                const type = news.newstype;
+                if (type == 'fake') {
+                    const card2 = document.createElement('div')
+                    card2.setAttribute('class', 'card')
 
-                const deleteBtn = document.createElement('img')
-                deleteBtn.setAttribute('class', 'delete-btn')
-                deleteBtn.src = 'images/delete.png'
-    
-                const title = document.createElement('h1')
-                title.setAttribute('class', 'title')
-                title.textContent = news.title
-    
-                const date = document.createElement('h1')
-                date.setAttribute('class', 'date')
-                date.textContent = news.date
+                    const settings = document.createElement('div')
+                    settings.setAttribute('class', 'settings')
 
-                const description = document.createElement('h1')
-                description.setAttribute('class', 'description')
-                description.textContent = news.description
+                    const deleteBtn = document.createElement('img')
+                    deleteBtn.setAttribute('class', 'delete-btn')
+                    deleteBtn.src = '../images/delete.png'
 
-                deleteBtn.addEventListener('click',
-                function() {
+                    const editBtn = document.createElement('img')
+                    editBtn.setAttribute('class', 'edit-btn')
+                    editBtn.src = '../images/edit.png'
 
-                    fetch('http://192.168.8.103:3001/deletenews/' + news._id, {
-                        method: 'DELETE',
-                    })
-                    .then(res => res.json())
-                    .then((data) => {
-                        const result = JSON.stringify(data.message);
-                        alert(result);
-                    })
-                },
-                false);
-    
-    
-                fakeNewsContainer.appendChild(card2)
-                card2.appendChild(deleteBtn)
-                card2.appendChild(title)
-                card2.appendChild(date)
-                card2.appendChild(description)
-            }
-          })
-    } 
-    else 
-    {
-        console.log('error')
+                    const title = document.createElement('h1')
+                    title.setAttribute('class', 'title')
+                    title.textContent = news.title
+
+                    const date = document.createElement('h1')
+                    date.setAttribute('class', 'date')
+                    date.textContent = news.date
+
+                    const description = document.createElement('h1')
+                    description.setAttribute('class', 'description')
+                    description.textContent = news.description
+
+                    deleteBtn.addEventListener('click',
+                        function () {
+
+                            fetch('http://192.168.8.103:3001/deletenews/' + news._id, {
+                                method: 'DELETE',
+                            })
+                                .then(res => res.json())
+                                .then((data) => {
+                                    const result = JSON.stringify(data.message);
+                                    alert(result);
+                                })
+                        },
+                        false);
+
+
+                    fakeNewsContainer.appendChild(card2)
+                    card2.appendChild(title)
+                    card2.appendChild(date)
+                    card2.appendChild(description)
+                    card2.appendChild(settings)
+                    settings.appendChild(deleteBtn)
+                    settings.appendChild(editBtn)
+
+                }
+            })
+        }
+        else {
+            console.log('error')
+        }
     }
-}
 
-request.send()
-
+    request.send()
 }
