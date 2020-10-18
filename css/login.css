@@ -1,87 +1,65 @@
-.login-page {
-  width: 500px;
-  margin: auto;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  background-color: #ededed;
+  height: 100vh;
+}
+
+.login-container{
+  width: 300px;
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%,-50%);
+  padding: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.login-container img{
+  width: 40px;
+}
+
+.login-container h1{
+  color: #812121;
+  margin-top: -15px;
+  font-size: 30px;
+}
+
+.login-container h5{
+  font-weight: 500;
+}
+
+.login-container .login-form{
+  display: grid;
   margin-top: 20px;
 }
-.form {
-  position: relative;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+
+.login-container input {
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: 1px solid #c2c2c2;
 }
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
+
+.login-container input:focus {
+  outline: 1px solid #812121;
+  border: none;
 }
-.form input[type="submit"] {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #812121;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
+
+.login-container input[type=submit] {
+  background-color: #812121;
+  color: white;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+}
+
+.login-container input[type=submit]:hover {
   cursor: pointer;
-}
-
-.logo-image {
-  padding: 10px;
-  width: 150px;
-  display: block;
-  margin: auto;
-}
-
-
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
-}
-body {
-  font-family: "Roboto", sans-serif;    
 }
