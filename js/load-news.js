@@ -11,8 +11,8 @@ verfiednews.appendChild(verifiedNewsContainer)
 fakenews.appendChild(fakeNewsContainer)
 
 
-var URL1 = 'http://192.168.8.103:3001/getnews'; //Main API
-var URL2 = 'http://192.168.8.103:3002/getnews'; //Backup API
+var URL1 = 'http://192.168.8.103:3000/getnews'; //Main API
+var URL2 = 'http://192.168.8.103:3001/getnews'; //Backup API
 
 URLChecking();
 

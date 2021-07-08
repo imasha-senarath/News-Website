@@ -2,8 +2,8 @@ document.getElementById('submit-as-verified').addEventListener('click', clickedV
 document.getElementById('submit-as-fake').addEventListener('click', clickedFake);
 
 var ClickedButton;
-var URL1 = 'http://192.168.8.103:3001/addnews';
-var URL2 = 'http://192.168.8.103:3002/addnews';
+var URL1 = 'http://192.168.8.103:3000/addnews';
+var URL2 = 'http://192.168.8.103:3001/addnews';
 
 function clickedVerfied(e) 
 {

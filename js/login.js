@@ -1,7 +1,7 @@
 document.getElementById('login').addEventListener('submit', URLChecking);
 
 var URL1 = 'http://192.168.8.103:3000/login';
-var URL2 = 'http://192.168.8.103:3002/login';
+var URL2 = 'http://192.168.8.103:3001/login';
 
 
 function URLChecking(e) 
