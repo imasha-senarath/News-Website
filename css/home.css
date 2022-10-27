@@ -42,9 +42,14 @@
     align-self: center;
 }
 
- .header .menu li{
+.header .menu li{
     display: inline;
     padding-left: 10px;
+}
+
+.header .menu li a{
+    text-decoration: none;
+    color: unset;
 }
 
  .header .menu li:hover{
