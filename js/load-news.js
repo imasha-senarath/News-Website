@@ -10,8 +10,8 @@ fakeNewsContainer.setAttribute('class', 'container')
 verfiednews.appendChild(verifiedNewsContainer)
 fakenews.appendChild(fakeNewsContainer)
 
-
-var URL1 = 'http://192.168.8.103:3000/getnews'; //Main API
+var URL1 = 'http://127.0.0.1:5500/json/news.json'; //Main API
+//var URL1 = 'http://192.168.8.103:3000/getnews'; //Main API
 var URL2 = 'http://192.168.8.103:3001/getnews'; //Backup API
 
 URLChecking();
